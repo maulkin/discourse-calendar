@@ -12,4 +12,5 @@ Fabricator(:event, from: 'DiscoursePostEvent::Event') do
   }
   starts_at { |attrs| attrs[:starts_at] || 1.day.from_now.iso8601 }
   ends_at { |attrs| attrs[:ends_at] }
+  location { |attrs| attrs[:location] }
 end

@@ -132,6 +132,9 @@ export default createWidget("discourse-post-event", {
           <div class="month">{{transformed.startsAtMonth}}</div>
           <div class="day">{{transformed.startsAtDay}}</div>
         </div>
+        <div class="event-location">
+          <div class=location">{{transformed.location}}</div>
+        </div>
         <div class="event-info">
           <span class="name">
             {{{transformed.eventName}}}

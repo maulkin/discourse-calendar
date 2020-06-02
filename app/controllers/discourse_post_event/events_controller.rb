@@ -91,6 +91,7 @@ module DiscoursePostEvent
           :name,
           :starts_at,
           :ends_at,
+          :location,
           :status,
           raw_invitees: []
         )

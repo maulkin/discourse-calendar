@@ -44,6 +44,7 @@ class CalendarEvent < ActiveRecord::Base
       description: description,
       start_date: from,
       end_date: to,
+      location: location,
       recurrence: recurrence
     )
 
@@ -82,6 +83,7 @@ end
 #  description :string
 #  start_date  :datetime         not null
 #  end_date    :datetime
+#  location    :string
 #  recurrence  :string
 #  region      :string
 #  created_at  :datetime         not null

@@ -26,6 +26,7 @@ register_asset "stylesheets/mobile/discourse-post-event.scss", :mobile
 register_asset "stylesheets/desktop/discourse-calendar.scss", :desktop
 register_svg_icon "fas fa-calendar-day"
 register_svg_icon "fas fa-clock"
+register_svg_icon "fas fa-map-marker-alt"
 register_svg_icon "fas fa-file-csv"
 register_svg_icon "fas fa-star"
 
@@ -470,10 +471,16 @@ after_initialize do
           end
 
           event_name = event_node['data-name'] || post.topic.title
+          event_location = ""
+          if event_node['data-location']
+            event_location = "<p>#{event_node['data-location']}</p>"
+          end
+          event_location = event_node['data-location'] || ""
           event_node.replace <<~TXT
             <div style='border:1px solid #dedede'>
               <p><a href="#{Discourse.base_url}#{post.url}">#{event_name}</a></p>
               <p>#{dates}</p>
+              #{event_location}
             </div>
           TXT
         end

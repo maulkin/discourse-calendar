@@ -3,6 +3,7 @@
 VALID_OPTIONS = [
   :start,
   :end,
+  :location,
   :status,
   :"allowed-groups",
   :name
